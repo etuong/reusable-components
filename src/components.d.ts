@@ -6,56 +6,38 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface MyRatingComponent {
+        "color": string;
+        "maxstars": number;
+        "rating": number;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLMyRatingComponentElement extends Components.MyRatingComponent, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLMyRatingComponentElement: {
+        prototype: HTMLMyRatingComponentElement;
+        new (): HTMLMyRatingComponentElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "my-rating-component": HTMLMyRatingComponentElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface MyRatingComponent {
+        "color"?: string;
+        "maxstars"?: number;
+        "rating"?: number;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "my-rating-component": MyRatingComponent;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "my-rating-component": LocalJSX.MyRatingComponent & JSXBase.HTMLAttributes<HTMLMyRatingComponentElement>;
         }
     }
 }
