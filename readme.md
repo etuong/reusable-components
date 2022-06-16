@@ -52,10 +52,10 @@ npm publish
 - Run `npm install my-component --save`
 - Call `defineCustomElements(window)` from the index.js file
     ```
-    import { applyPolyfills, defineCustomElements } from 'my-component/loader';
+    import { applyPolyfills, defineCustomElements } from '<your-component-name>/loader';
 
     applyPolyfills().then(() => {
-    defineCustomElements(window);
+        defineCustomElements(window);
     });
     ```
 
@@ -72,7 +72,7 @@ npm publish
     ```
 - Define the custom elements
     ```
-    import { defineCustomElements } from '<your-component-name>/dist/loader';
+    import { defineCustomElements } from '<your-component-name>/loader';
 
     defineCustomElements(window);
     ```
